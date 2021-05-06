@@ -30,3 +30,23 @@ function computerPlay(){
 };
 
 
+function userPlayer(){
+  if (! userChoies){
+    document.write("<p>Player1 , you cheated! Re.</p>");
+
+  }else{
+    document.write("<p>Player 1:"+""+ userChoies +"</p>");
+  }
+  var compare = function(choice1,choice2){
+    if (choice1 ===choice2){
+      return;"Stalemate";
+    }
+    if (choice1 === "rock"){
+      if(choice2 === "scissors"){
+        return "wins"
+      }
+    }
+  }
+  var results = compare(userChoies,computerChoice);
+
+}
