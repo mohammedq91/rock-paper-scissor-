@@ -7,6 +7,7 @@ var scissor = document.getElementsByClassName('.item-scissor').addEventListener(
 
 function play(){
   console.log('You clicked me!')
+  console.log('test')
 };
 
 
