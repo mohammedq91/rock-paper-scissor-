@@ -1,14 +1,13 @@
-const rock = document.getElementById('Rock').addEventListener('click', play)
-const paper = document.getElementById('Paper').addEventListener('click', play)
-const scissors = document.getElementById('Scissors').addEventListener('click', play)
+const rock = document.getElementById('rock').addEventListener('click', play)
+const paper = document.getElementById('paper').addEventListener('click', play)
+const scissors = document.getElementById('scissors').addEventListener('click', play)
 
 const userDisplay = document.getElementById('user')
 const computerDisplay = document.getElementById('computer')
 const outcome = document.getElementById('outcome')
 
 var user;
-let computer;
-
+var computer;
 
 function play(e){
   const rock = e.target.id;
@@ -19,60 +18,54 @@ function play(e){
 
   const scissors = e.target.id
   userDisplay.textContent = "You have chosen: " + scissors
-  computerPlay();
-  result();
+
+  result(e.target.id);
 }
 
 function computerPlay(){
-  var randomNumber = Math.random();
-
-  if (randomNumber <= 0.33){
-    computerDisplay.textContent = "Computer choses: Rock";
-
-  } else if (randomNumber > 0.33 && randomNumber <= 0.66){
-    computerDisplay.textContent = "Computer choses: Paper";
-
-  } else 
-    computerDisplay.textContent = "Computer choses: Scissors";
+  const choices = ['rock', 'paper', 'scissors']
+  return choices[Math.floor(Math.random()*choices.length)]
   };
   
 
-function result(){
+function result(user){
+
+  computer = computerPlay()
+  computerDisplay.textContent = `Computer chooses: ${computer}`
+  
+  
   if (user === "rock"){
     if (computer === "rock"){
       outcome.textContent = "You have a tie!"
-      console.log(outcome.textContent)
 
     } else if (computer === "paper"){
-      outcome.textContent = "You have lost!"
-      console.log(outcome.textContent)
+      outcome.textContent = "You lost!"
 
     } else if (computer === "scissors"){
-      outcome.textContent = "You have won!"
-      console.log(outcome.textContent)
+      outcome.textContent = "You won!"
     }
   }
 
   else if (user === "paper"){
     if (computer === "rock"){
-      outcome.textContent = "You have won!"
+      outcome.textContent = "You won!"
 
     } else if (computer === "paper"){
-      out.outcome.textContent = "You have a tie!"
+      outcome.textContent = "You have a tie!"
 
     } else if (computer === "scissors"){
-      outcome.textContent = "You have lost!"
+      outcome.textContent = "You lost!"
     }
   }
 
   else if (user === "scissors"){
     if (computer === "rock"){
-      outcome.textContent = "You have lost!"
+      outcome.textContent = "You lost!"
 
     } else if (computer === "paper"){
-      outcome.textContent = "you have won!"
+      outcome.textContent = "You won!"
 
     } else
-      outcome.textContent = "you have a tie!"
+      outcome.textContent = "You have a tie!"
   }
 }
