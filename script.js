@@ -1,15 +1,14 @@
-const rock = document.getElementById('rock').addEventListener('click', play)
-const paper = document.getElementById('paper').addEventListener('click', play)
-const scissors = document.getElementById('scissors').addEventListener('click', play)
+const rock = document.getElementById('rock').addEventListener('click', userPlay)
+const paper = document.getElementById('paper').addEventListener('click', userPlay)
+const scissors = document.getElementById('scissors').addEventListener('click', userPlay)
 
 const userDisplay = document.getElementById('user')
 const computerDisplay = document.getElementById('computer')
 const outcome = document.getElementById('outcome')
-
 var user;
 var computer;
 
-function play(e){
+function userPlay(e){
   const rock = e.target.id;
   userDisplay.textContent = "You have chosen: " + rock
 
