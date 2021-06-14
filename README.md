@@ -1,6 +1,6 @@
 # Vanilla JavaScript rock-paper-scissors 
 
-#### A simple To-Do-App written entirely in Javascript, HTML, and CSS.
+#### A simple Rock-Paper-Scissors game written entirely in Javascript, HTML, and CSS.
 
 #### Play it [here](https://mohammedq91.github.io/rock-paper-scissors/)
 
@@ -8,7 +8,7 @@
 
 ## Summary
 
-This project helped me emphasize learning JavaScript topics that are mentioned in Digital Clock Summary Section. Also, I learned the followings: "adding and applying 'click/submit' events to buttons when pressed; attaching and/or removing child line to/from parent when pressed on add/remove buttons; and applying strike-through.
+This project helped me further to grasp my understanding of JavaScript fundamentals. Also, I learned how to return an element from a list.
 
 
 
