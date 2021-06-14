@@ -10,7 +10,7 @@ var computer;
 
 function userPlay(e){
   const rock = e.target.id;
-  userDisplay.textContent = "You have chosen: " + rock
+  userDisplay.textContent = "You have chosen: " + rock 
 
   const paper = e.target.id 
   userDisplay.textContent = "You have chosen: " + paper
