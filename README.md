@@ -8,8 +8,7 @@
 
 ## Summary
 
-This project helped me further to grasp my understanding of JavaScript fundamentals. Also, I learned how to return an element from a list.
-
+This project highlighted the significane of minimizing global variables utility and of using local variables inside functions, instead. I learned how to access the DOM and loop through one element at a time and add Event Listener to it. I learned how to declare a fucntion to use to perform one task only, to recall the function, passing through needed variables/constants to other functions through their argument/parameters. I also learned how to use template literals and implement variables to them to have dynamic displays. Finally, I was introduced to switch statement.
 
 
 ## Author
