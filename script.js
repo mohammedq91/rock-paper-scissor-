@@ -1,70 +1,50 @@
-const rock = document.getElementById('rock').addEventListener('click', userPlay)
-const paper = document.getElementById('paper').addEventListener('click', userPlay)
-const scissors = document.getElementById('scissors').addEventListener('click', userPlay)
-
-const userDisplay = document.getElementById('user')
-const computerDisplay = document.getElementById('computer')
-const outcome = document.getElementById('outcome')
-var user;
-var computer;
+const gameBtns = document.querySelectorAll("button");
+for (gameBtn of gameBtns){
+  gameBtn.addEventListener("click", (e) => userPlay(e));
+}
 
 function userPlay(e){
-  const rock = e.target.id;
-  userDisplay.textContent = "You have chosen: " + rock 
+  const user = e.target.id;
 
-  const paper = e.target.id 
-  userDisplay.textContent = "You have chosen: " + paper
+  const userDisplay = document.getElementById('user');
+  userDisplay.textContent = `You have chosen: ${user}`;
 
-  const scissors = e.target.id
-  userDisplay.textContent = "You have chosen: " + scissors
-
-  result(e.target.id);
-}
+  result(user);
+};
 
 function computerPlay(){
-  const choices = ['rock', 'paper', 'scissors']
-  return choices[Math.floor(Math.random()*choices.length)]
-  };
-  
+  const choices = ["rock", "paper", "scissors"];
+  return choices[Math.floor(Math.random() * choices.length)];
+}
 
 function result(user){
+  const computer = computerPlay();
 
-  computer = computerPlay()
-  computerDisplay.textContent = `Computer chooses: ${computer}`
-  
-  
-  if (user === "rock"){
-    if (computer === "rock"){
-      outcome.textContent = "You have a tie!"
+  const computerDisplay = document.getElementById('computer');
+  computerDisplay.textContent = `Computer chooses: ${computer}`;
 
-    } else if (computer === "paper"){
-      outcome.textContent = "You lost!"
+  if (user === computer) displayResult('tie');
 
-    } else if (computer === "scissors"){
-      outcome.textContent = "You won!"
-    }
+  switch (user) {
+    case "rock":
+      if (computer === 'paper') displayResult("lost");
+      if (computer === "scissors") displayResult("won");
+      break;
+    case "paper":
+      if (computer === "rock") displayResult("won");
+      if (computer === "scissors") displayResult("lost");
+      break;
+    case "scissors":
+      if (computer === "paper") displayResult("won");
+      if (computer === "rock") displayResult("lost");
+      break;
   }
 
-  else if (user === "paper"){
-    if (computer === "rock"){
-      outcome.textContent = "You won!"
+  function displayResult(result){
+    const outcome = document.getElementById('outcome');
 
-    } else if (computer === "paper"){
-      outcome.textContent = "You have a tie!"
-
-    } else if (computer === "scissors"){
-      outcome.textContent = "You lost!"
-    }
-  }
-
-  else if (user === "scissors"){
-    if (computer === "rock"){
-      outcome.textContent = "You lost!"
-
-    } else if (computer === "paper"){
-      outcome.textContent = "You won!"
-
-    } else
-      outcome.textContent = "You have a tie!"
+    if (result === "won" || "lost") outcome.textContent = `You ${result}!`;
+    if (result === "tie") outcome.textContent = `You have a ${result};`;
   }
 }
+
